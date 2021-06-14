@@ -194,7 +194,7 @@ def cb_wrapper(func):
         users = await get_all_pros()
         if cb.from_user.id not in users:
             await cb.answer(
-                "You Can't Access Me, Only My Master Can. Why Don't You Deploy Your Own Friday? - @FridayOT",
+                "ശെടാ നീ വന്ന് വന്ന് എൻ്റെ മെക്കിട്ടും കയറാൻ തുടങ്ങിയാ .ഇനി മുതൽ നിന്നോട് ഞാൻ സാങ്കേതികപരമായി തകർക്കും😎😠",
                 cache_time=0,
                 show_alert=True,
             )
