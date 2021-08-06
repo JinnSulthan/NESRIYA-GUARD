@@ -1,4 +1,4 @@
-<p align="center"><a href="https://t.me/fridayot"><img src="https://telegra.ph/file/22535f8051a58af113586.jpg" width="5000"></a></p> 
+<p align="center"><a href="https://t.me/MR_JINN_OF_TG"><img src="https://telegra.ph//file/aff077680944610cb1e6c.jpg" width="5000"></a></p> 
 <h1 align="center"><b>FRIDAY-USERBOT 🇮🇳 </b></h1>
 <h4 align="center">A Powerful, Smart And Simple Userbot In Pyrogram.</h4>
 
@@ -22,10 +22,10 @@
 
 # String Session - Pyrogram 🖱
 ### Repl 🧨
-[![Run on Repl.it](https://repl.it/badge/github/STARKGANG/friday)](https://replit.com/@MIDHUNKMKM/StringGen)
+[![Run on Repl.it](https://repl.it/badge/github/MR-JINN-OF-TG/NESRIYA-GUARD)](https://replit.com/@MRJINNOFTG/TG-SESSION)
 ### Locally 🏆
 ```
-$ git clone https://github.com/DevsExpo/FridayUserbot
+$ git clone https://github.com/MR-JINN-OF-TG/NESRIYA-GUARD
 $ cd FridayUserbot
 $ python(3) string_gen.py
 ```
@@ -34,12 +34,12 @@ $ python(3) string_gen.py
 
 ### Deploying To Heroku ⚙
 
-[![Deploy To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/DevsExpo/FridayUserbot)
+[![Deploy To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/MR-JINN-OF-TG/NESRIYA-GUARD)
 
 ### Self-hosting (For Devs) ⚔
 ```sh
 # Install Git First // (Else You Can Download And Upload to Your Local Server)
-$ git clone https://github.com/DevsExpo/FridayUserbot
+$ git clone https://github.com/MR-JINN-OF-TG/NESRIYA-GUARD
 # Open Git Cloned File
 $ cd FridayUserbot
 # Install All Requirements 
