@@ -194,7 +194,7 @@ def cb_wrapper(func):
         users = await get_all_pros()
         if cb.from_user.id not in users:
             await cb.answer(
-                "❣️❣️അകലെ അവളും ഞാനും കാണാനകലെ ഒരു നാൾ നീ അണിയല്ലെ വരുമോ അരികെ❣️❣️.",
+                "❣️❣️അകലെ അവളും ഞാനും കാണാനകലെ ഒരു നാൾ നീ അണയില്ലെ വരുമോ അരികെ❣️❣️ എൻ്റെ പാത്തൂട്ടി ഐ ലവ് യൂ❣️❣️.",
                 cache_time=0,
                 show_alert=True,
             )
