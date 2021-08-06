@@ -1,5 +1,5 @@
 <p align="center"><a href="https://t.me/MR_JINN_OF_TG"><img src="https://telegra.ph//file/aff077680944610cb1e6c.jpg" width="5000"></a></p> 
-<h1 align="center"><b>FRIDAY-USERBOT 🇮🇳 </b></h1>
+<h1 align="center"><b>NESRIYA-GUARD 🇮🇳 </b></h1>
 <h4 align="center">A Powerful, Smart And Simple Userbot In Pyrogram.</h4>
 
 
@@ -58,7 +58,7 @@ $ python(3) -m main_startup
     [-] STRINGSESSION : Your String Session, You can get this From Repl or BY running String_Gen File Locally
     [-] MONGO_DB : Your Mongo DB DataBase Url. 
     [-] LOG_GRP: Your Log Group/Channel Chat ID. This is Very Important and Some Modules Will Not Work Well Without This!
-[+] The fridayUserbot will not work without setting the mandatory vars.
+[+] The NESRIYA-GUARD will not work without setting the mandatory vars.
 ```
 
 # Examples - Plugins 👊
