@@ -1,7 +1,7 @@
 {
-  "name": "Friday-Userbot",
-  "description": "A Userbot Based On Pyrogram.",
-  "logo": "https://telegra.ph/file/b4e1e36c6b1fcb32dd997.jpg",
+  "name": "NESRIYA-GUARD",
+  "description": "NESRIYA-GUARD A POWERFUL USERBOT FOR YOUR TG USE.",
+  "logo": "https://telegra.ph//file/aff077680944610cb1e6c.jpg",
   "keywords": [
     "telegram",
     "fridaybot",
@@ -9,9 +9,9 @@
     "fridaybot",
     "productivity"
   ],
-  "repository": "https://github.com/starkgang/FridayUserbot",
-  "website": "t.me/fridayot",
-  "success_url": "t.me/FridayOT",
+  "repository": "https://github.com/MR-JINN-OF-TG/NESRIYA-GUARD",
+  "website": "https://github.com/MR-JINN-OF-TG",
+  "success_url": "https://github.com/MR-JINN-OF-TG",
   "stack": "container",
   "env": {
     "API_ID": {
@@ -49,11 +49,11 @@
     },
     "UPSTREAM_REPO": {
       "description": "Your Upstream URL HERE. If You're Beginner, Don't Change This.",
-      "value": "https://github.com/DevsExpo/FridayUserBot",
+      "value": "https://github.com/MR-JINN-OF-TG/NESRIYA-GUARD",
       "required": false
     },
     "BOT_TOKEN": {
-      "description": "Your Bot Token Obtained From @BotFather. This is Not Important",
+      "description": "Your Bot Token Obtained From @BotFather.",
       "value": "",
       "required": false
     },
@@ -62,7 +62,7 @@
       "value": "Asia/Kolkata"
     },
     "STRINGSESSION": {
-      "description": "String Session, Run string_gen.py to get String Session.",
+      "description": "String Session, Run string_gen.py to or https://replit.com/@MRJINNOFTG/TG-SESSION to get String Session. .",
       "value": ""
     }
   }
