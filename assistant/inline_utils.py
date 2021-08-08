@@ -212,7 +212,7 @@ async def owo(client, inline_query):
         ]
         if Config.LOAD_UNOFFICIAL_PLUGINS:
             total_ = len(XTRA_CMD_LIST) + len(CMD_LIST)
-        nice_text = f"**Nazriya Commands** \n**Friday Version :** __{friday_version}__ \n**PyroGram Version :** __{__version__}__ \n**Total Plugins Loaded :** __{total_}__"
+        nice_text = f"**Nazriya Commands** \n**Nazriya Version :** __{friday_version}__ \n**PyroGram Version :** __{__version__}__ \n**Total Plugins Loaded :** __{total_}__"
         await client.answer_inline_query(
             inline_query.id,
             cache_time=0,
@@ -333,7 +333,7 @@ async def black_menu(client, cb):
         ]
     if Config.LOAD_UNOFFICIAL_PLUGINS:
         total_ = len(XTRA_CMD_LIST) + len(CMD_LIST)
-    nice_text = f"**Nazriya Commands** \n**Friday Version :** __{friday_version}__ \n**PyroGram Version :** __{__version__}__ \n**Total Plugins Loaded :** __{total_}__"
+    nice_text = f"**Nazriya Commands** \n**Nazriya Version :** __{friday_version}__ \n**PyroGram Version :** __{__version__}__ \n**Total Plugins Loaded :** __{total_}__"
     await cb.edit_message_text(nice_text, reply_markup=InlineKeyboardMarkup(bttn))
 
 @bot.on_callback_query(filters.regex(pattern="make_cmd_buttons"))
