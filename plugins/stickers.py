@@ -87,7 +87,7 @@ async def packinfo(client, message):
         name = nam[1:]
     else:
         name = message.from_user.first_name
-    packname = f"@{nm} Kang Pack {pack}"
+    packname = f"@{nm} Pack {pack}"
     packshortname = f"FRIDAY_{message.from_user.id}_{pack}"
     non = [None, "None"]
     emoji = "😁"
@@ -148,8 +148,8 @@ async def packinfo(client, message):
         while limit in messi.text:
             pack += 1
             prev_pack = int(pack) - 1
-            await pablo.edit(f"Kang Pack Vol __{prev_pack}__ is Full! Switching To Vol __{pack}__ Kang Pack")
-            packname = f"@{nm} Kang Pack {pack}"
+            await pablo.edit(f"Pack Vol __{prev_pack}__ is Full! Switching To Vol __{pack}__ Kang Pack")
+            packname = f"@{nm} Pack {pack}"
             packshortname = f"FRIDAY_{message.from_user.id}_{pack}"
             if is_anim:
                 packshortname += "_animated"
