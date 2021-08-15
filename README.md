@@ -88,7 +88,7 @@ async def mentioned_(client, message):
 ```
 
 # X-Tra Plugins 🎸
-* Please Visit [Xtra-Plugins](https://github.com/MR-JINN-OF-TG/NESRIYA-GUARD--XTRA-PLUGINS) To Checkout Xtra-Plugins.
+* Please Visit [Xtra-Plugins](https://github.com/MR-JINN-OF-TG/NESRIYA-GUARD-XTRA-PLUGINS) To Checkout Xtra-Plugins.
 
 
 # Licence 📋
