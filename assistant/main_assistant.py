@@ -39,7 +39,7 @@ async def start(client, message):
     bot_username = starkbot.username
     firstname = message.from_user.first_name
     user_id = message.from_user.id
-    starttext = f"`Hello, {firstname} ! Nice To Meet You, Well I Am {bot_name}, An Powerfull Assistant Bot To Talk And Do Many Things For My Master!`. \n\nPowered By [@MR_JINN_OF_TG](https://github.com/MR-JINN-OF-TG/NESRIYA-GUARD)"
+    starttext = f"`HAI, {firstname} ! AM ASSISTANT OF JINN,WELL MY NAME IS {bot_name} DONT TELL MY NAME TO OTHERS. OH I FORGOT AM HERE FOR YOU TO CONTACT MY JINN!`. \n\nPowered By [@MR_JINN_OF_TG](https://github.com/MR-JINN-OF-TG/NESRIYA-GUARD)"
     mypic = Config.ASSISTANT_START_PIC
     if user_id not in all_user_s:
         await client.send_photo(
@@ -54,7 +54,7 @@ async def start(client, message):
         if not kok:
             await add_user(user_id)
     else:
-        message87 = f"Hi Master, It's Me {bot_name}, Your Assistant ! \nWhat You Wanna Do today ?"
+        message87 = f"Hi, It's Me {bot_name}, YOUR LOVE ! \nBTW ANY HELP OR ANYTHING ELSE?"
         await client.send_photo(
             message.chat.id,
             mypic,
@@ -63,13 +63,13 @@ async def start(client, message):
                 [
                     [
                         InlineKeyboardButton(
-                            "Add Me to Group 👥",
+                            "ADD ME TO GROUP",
                             url=f"t.me/{bot_username}?startgroup=true",
                         )
                     ],
                     [
                         InlineKeyboardButton(
-                            "Commands For Assistant", callback_data="cmdgiv"
+                            "NESRIYA CMDS", callback_data="cmdgiv"
                         )
                     ],
                 ]
