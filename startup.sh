@@ -10,8 +10,8 @@ nowtime=$(date)
 echo "
 FridayUserBot
 
-(C) @FridayOT
-Powered By @DevsExpo.
+(C) @MR_JINN_OF_TG
+Powered By @MR_JINN_OF_TG.
 Time : $nowtime
 "
 update_and_install_packages () {
@@ -39,8 +39,8 @@ ech_final () {
 =+---------------------------------------------------------+=
 Deployment Sucessfull.
 Docker Images Are Being Pushed, Please Wait.
-Thank You For Installing FridayUB.
-(C) @DevsExpo
+Thank You For Installing NAZRIYAGUARD.
+(C) @MR_JINN_OF_TG
 =+---------------------------------------------------------+=
 
     "
