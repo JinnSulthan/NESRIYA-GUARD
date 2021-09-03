@@ -36,6 +36,10 @@ $ python(3) string_gen.py
 
 [![Deploy To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/MR-JINN-OF-TG/NESRIYA-GUARD)
 
+### DEPLOY TO RAILWAY 
+
+[!Deploy to Railway](http://railway.app/new/template?template=https://github.com/MR-JINN-OF-TG/NESRIYA-GUARD&envs=STRINGSESSION,LOG_GRP,API_HASH,API_ID,BOT_TOKEN,LOAD_UNOFFICIAL_PLUGINS,TZ,MONGO_DB&STRINGSESSIONDesc=Get+session+from+here+https://replit.com/@MRJINNOFTG/TG-SESSION&LOG_GRPDesc=A+Group+ID+Where+You+Want+To+Log+Important+Logs.&API_HASHDesc=Get+this+value+from+my.telegram.org&API_IDDesc=Get+this+value+from+my.telegram.org&BOT_TOKENDesc=Get+Your+Bot+Token+From+@BotFather.&LOAD_UNOFFICIAL_PLUGINSDesc=Write+True+or+False+only&TZDesc=Your+Time+Zone.+For+India+write+Asia/Kolkata&MONGO_DBDesc=Get+your+mongodb+url+from+here+cloud.mongodb.com) 
+
 ### Self-hosting (For Devs) ⚔
 ```sh
 # Install Git First // (Else You Can Download And Upload to Your Local Server)
