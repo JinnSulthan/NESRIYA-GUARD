@@ -19,7 +19,7 @@ from database.bot_settings_db import (
     get_thumb,
     add_block_text,
     get_block_text,
-    set_pm_spam_limit,
+    set_pm_spam_limit
 )
 from database.pmdb import approve_user, disapprove_user, is_user_approved
 from main_startup.core.decorators import friday_on_cmd, listen
