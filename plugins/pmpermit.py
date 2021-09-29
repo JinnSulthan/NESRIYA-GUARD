@@ -17,6 +17,8 @@ from database.bot_settings_db import (
     get_pm_spam_limit,
     get_pm_text,
     get_thumb,
+    add_block_text,
+    get_block_text,
     set_pm_spam_limit,
 )
 from database.pmdb import approve_user, disapprove_user, is_user_approved
@@ -41,54 +43,54 @@ from plugins import devs_id
     },
 )
 async def set_custom_pm_texts(client, message):
+    engine = message.Engine
     if not Config.PM_PSW:
-        await ms_.edit("`Pm Permit Is Disabled. Whats The Use Of Adding Custom Pm Text?`")
+        await message.edit(engine.get_string("SET_PM_TEXT"))
         return
     ptext = get_text(message)
     if not ptext:
         if not message.reply_to_message:
-            await message.edit("`Reply To Text Message Or Give To Text As Input To SetAs Custom PM Text`")
+            await message.edit(engine.get_string("TO_SET_CUSTOM_TEXT"))
             return
         if message.reply_to_message.text:
             ptext = message.reply_to_message.text
     if not ptext:
         await message.edit(
-            "`Reply To Text Message Or Give To Text As Input To SetAs Custom PM Text`"
+            engine.get_string("TO_SET_CUSTOM_TEXT")
         )
         return
     if ptext == "default":
         await add_pm_text()
     else:
         await add_pm_text(ptext)
-    await message.edit(f"PM-Message Sucessfully Changed To `{ptext}`")
+    await message.edit(engine.get_string("PM_MSG_CHANGED").format(ptext))
 
 
 @friday_on_cmd(
     ["setpmlimit"],
     cmd_help={
         "help": "Set Pm Limit!",
-        "example": "{ch}setpmlimit (number between 3-20)",
-    },
-)
-async def set_custom_pm_texts(client, message):
+        "example": "{ch}setpmlimit (number between 3-20)"})
+async def set_custom_pm_limit(client, message):
+    engine = message.Engine
     if not Config.PM_PSW:
-        await ms_.edit("`Pm Permit Is Disabled. Whats The Use Of Setting Pm Limit?`")
+        await message.edit(engine.get_string("SET_PM_LIMIT"))
         return
     ptext = get_text(message)
     if not ptext:
-        await message.edit("`Give Number Input!`")
+        await message.edit(engine.get_string("INPUT_REQ").format("Pm Limit"))
         return
     if not ptext.isdigit():
-        await message.edit("`Pm Limit Should Be In Numbers From 3-20`")
+        await message.edit(engine.get_string("TO_SET_PM_LIMIT"))
         return
     if int(ptext) < 3:
-        await message.edit("`Pm Limit Should Be In Numbers From 3-20`")
+        await message.edit(engine.get_string("TO_SET_PM_LIMIT"))
         return
     if int(ptext) >= 20:
-        await message.edit("`Pm Limit Should Be In Numbers From 3-20`")
+        await message.edit(engine.get_string("TO_SET_PM_LIMIT"))
         return
     await set_pm_spam_limit(int(ptext))
-    await message.edit(f"PM-Message-Limit Sucessfully Changed To `{ptext}`")
+    await message.edit(engine.get_string("SUCCESS_CHANGED").format(ptext))
 
 
 @friday_on_cmd(
@@ -99,6 +101,7 @@ async def set_custom_pm_texts(client, message):
     },
 )
 async def blockz(client, message):
+    engine = message.Engine
     if message.chat.type == "private":
         user_ = await client.get_users(int(message.chat.id))
         firstname = user_.first_name
@@ -112,7 +115,7 @@ async def blockz(client, message):
         await message.delete()
     elif message.chat.type == "supergroup":
         if not message.reply_to_message:
-            await message.edit("`Reply To User To Block Him !`")
+            await message.edit(engine.get_string("TO_BLOCK").format("Block"))
             return
         user_ = await client.get_users(message.reply_to_message.from_user.id)
         firstname = user_.first_name
@@ -136,12 +139,13 @@ async def blockz(client, message):
     },
 )
 async def unmblock(client, message):
+    engine = message.Engine
     if message.chat.type == "private":
         await asyncio.sleep(3)
         await message.delete()
     elif message.chat.type == "supergroup":
         if not message.reply_to_message:
-            await message.edit("`Reply To User To Un-Block Him !`")
+            await message.edit(engine.get_string("TO_BLOCK").format("Un-Block"))
             return
         user_ = await client.get_users(message.reply_to_message.from_user.id)
         firstname = user_.first_name
@@ -163,8 +167,9 @@ async def unmblock(client, message):
     },
 )
 async def allow(client, message):
+    engine = message.Engine
     if not Config.PM_PSW:
-        await ms_.edit("`Pm Permit Is Disabled. Whats The Use Of Approving User?`")
+        await message.edit(engine.get_engine("HACK_APPROVED").format("Approving"))
         return
     if message.chat.type == "private":
         if int(message.chat.id) in OLD_MSG:
@@ -174,7 +179,7 @@ async def allow(client, message):
         if not await is_user_approved(int(message.chat.id)):
             await approve_user(int(message.chat.id))
         else:
-            await message.edit("`User is Already Approved!`")
+            await message.edit(engine.get_string("USER_ALREADY_APPROVED").format(message.reply_to_message.from_user.mention))
             await asyncio.sleep(3)
             await message.delete()
             return
@@ -187,14 +192,14 @@ async def allow(client, message):
         await message.delete()
     elif message.chat.type == "supergroup":
         if not message.reply_to_message:
-            await message.edit("`Reply To User To Approve Him !`")
+            await message.edit(engine.get_string("TO_BLOCK").format("Approve"))
             return
         user_ = await client.get_users(message.reply_to_message.from_user.id)
         firstname = user_.first_name
         if not await is_user_approved(message.reply_to_message.from_user.id):
             await approve_user(message.reply_to_message.from_user.id)
         else:
-            await message.edit("`User is Already Approved!`")
+            await message.edit(engine.get_string("USER_ALREADY_APPROVED").format(message.reply_to_message.from_user.mention))
             await asyncio.sleep(3)
             await message.delete()
             return
@@ -215,8 +220,9 @@ async def allow(client, message):
     },
 )
 async def disallow(client, message):
+    engine = message.Engine
     if not Config.PM_PSW:
-        await ms_.edit("`Pm Permit Is Disabled. Whats The Use Of Dis-Approving Users?`")
+        await message.edit(engine.get_engine("HACK_APPROVED").format("Dis-Approving"))
         return
     if message.chat.type == "private":
         user_ = await client.get_users(int(message.chat.id))
@@ -225,8 +231,7 @@ async def disallow(client, message):
             await disapprove_user(int(message.chat.id))
         else:
             await message.edit(
-                "`This User Was Never Approved. How Should I Disapprove?`"
-            )
+                engine.get_string("USER_NOT_APPROVED").format(message.reply_to_message.from_user.mention))
             await asyncio.sleep(3)
             await message.delete()
             return
@@ -239,7 +244,7 @@ async def disallow(client, message):
         await message.delete()
     elif message.chat.type == "supergroup":
         if not message.reply_to_message:
-            await message.edit("`Reply To User To DisApprove Him !`")
+            await message.edit(engine.get_string("TO_BLOCK").format("Disapprove"))
             return
         user_ = await client.get_users(message.reply_to_message.from_user.id)
         firstname = user_.first_name
@@ -247,8 +252,7 @@ async def disallow(client, message):
             await disapprove_user(message.reply_to_message.from_user.id)
         else:
             await message.edit(
-                "`This User Was Never Approved. How Should I Disapprove?`"
-            )
+                engine.get_string("USER_NOT_APPROVED").format(message.reply_to_message.from_user.mention))
             await asyncio.sleep(3)
             await message.delete()
             return
@@ -269,29 +273,39 @@ async def disallow(client, message):
     },
 )
 async def set_my_pic(client, message):
-    ms_ = await edit_or_reply(message, "`Please Wait!`")
+    engine = message.Engine
+    ms_ = await edit_or_reply(message, engine.get_string("PROCESSING"))
     if not Config.PM_PSW:
-        await ms_.edit("`Pm Permit Is Disabled. Whats The Use Of Adding A Pm Pic?`")
+        await message.edit("`Pm Permit Is Disabled. Whats The Use Of Adding A Pm Pic?`")
         return
     if not await is_media(message.reply_to_message):
-        await ms_.edit("`Reply To Media To Set As Your Pm Permit Media.`")
+        await ms_.edit(engine.get_string("NEEDS_REPLY").format("Media"))
         return
     if message.reply_to_message.sticker:
         file_ = await convert_to_image(message, client)
         if not os.path.exists(file_):
-            return await ms_.edit("`Unable To Convert To Image.`")
+            return await ms_.edit(engine.get_string("NEEDS_C_INPUT"))
         copied_msg = await client.send_photo(Config.LOG_GRP, file_)
         if os.path.exists(file_):
             os.remove(file_)
     else:
         copied_msg = await message.reply_to_message.copy(int(Config.LOG_GRP), caption="")
     await add_pm_thumb(copied_msg.message_id)
-    await ms_.edit("`Sucessfully Set This Image As Pm Permit Media!`")
+    await ms_.edit(engine.get_string("SET_DONE_IMAGE"))
 
 async def is_media(message):
-    if not (message.photo or message.video or message.document or message.audio or message.sticker or message.animation or message.voice or message.video_note):
-        return False
-    return True
+    return bool(
+        (
+            message.photo
+            or message.video
+            or message.document
+            or message.audio
+            or message.sticker
+            or message.animation
+            or message.voice
+            or message.video_note
+        )
+    )
 
 @listen(filters.incoming & filters.private & ~filters.edited & ~filters.me & ~filters.service)
 async def pmPermit(client, message):
@@ -320,15 +334,21 @@ async def pmPermit(client, message):
     text = await get_pm_text()
     log = LogIt(message)
     capt = await get_thumb()
-    pm_s_ = await get_pm_spam_limit()
+    pm_warns = await get_pm_spam_limit()
+    PM_CUSTOM_BLOCK_MSG = await get_block_text()
     if int(message.chat.id) not in PM_WARNS:
         PM_WARNS[int(message.chat.id)] = 0
     else:
         PM_WARNS[int(message.chat.id)] += 1
-    if PM_WARNS[int(message.chat.id)] >= int(pm_s_):
-        await message.reply_text(
-            f"`Thats It! I Gave You {int(pm_s_)} Warning. Now Go and drink a sip of tea.When jinn came online he would respond!`"
-        )
+    if PM_WARNS[int(message.chat.id)] >= int(pm_warns):
+        if not PM_CUSTOM_BLOCK_MSG:
+            await message.reply_text(
+                f"`Thats It! I Gave You {int(pm_warns)} Warnings.\nYou are now Reported and Blocked`\n**Reason:** `SPAM LIMIT REACHED !`"
+            )
+        else:
+            await message.reply_text(
+                f"{eval(PM_CUSTOM_BLOCK_MSG)}"
+            )
         await client.block_user(user_.id)
         if int(message.chat.id) in OLD_MSG:
             OLD_MSG.pop(int(message.chat.id))
@@ -337,7 +357,7 @@ async def pmPermit(client, message):
         blockeda = f"**#Blocked_PMPERMIT** \n**User :** `{user_.id}` \n**Reason :** `Spam Limit Reached.`"
         await log.log_msg(client, blockeda)
         return
-    warnings_got = f"{int(PM_WARNS[int(message.chat.id)]) + 1}/{int(pm_s_)}"
+    warnings_got = f"{int(PM_WARNS[int(message.chat.id)]) + 1}/{int(pm_warns)}"
     user_firstname = message.from_user.first_name
     user_mention = message.from_user.mention
     me_f = client.me.first_name
