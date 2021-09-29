@@ -6,7 +6,7 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: Upload Python Package in Friday
+name: Upload Python Package in Friday Ub
 
 on:
   release:
