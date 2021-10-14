@@ -1,3 +1,7 @@
+### This is only for mine use use main repo. 
+
+
+
 <p align="center"><a href="https://t.me/MR_JINN_OF_TG"><img src="https://telegra.ph//file/aff077680944610cb1e6c.jpg" width="5000"></a></p> 
 <h1 align="center"><b>NESRIYA-GUARD 🇮🇳 </b></h1>
 <h4 align="center">A Powerful, Smart And Simple Userbot In Pyrogram.</h4>
